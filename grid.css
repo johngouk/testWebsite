@@ -1,0 +1,43 @@
+.container {
+  display: grid;
+  /* 
+  	The grid-template-area specifies how the columns will be used
+  	so "header header" says use both columns in first row for header content
+  */
+  grid-template-areas:
+    "header header"
+    "content menu"
+    "footer footer";
+	/*
+		grid-template-columns specifies column stuff; Nfr Mfr seems to be 
+		the N/N+M and M/N+M fraction of the window width used - handy!
+	*/
+  grid-template-columns: 4fr 1fr;
+  /* Controls inter-box border */
+  gap: 0px;
+  /* controls box backround colour*/
+  background-color: #2196F3;
+  /* controls outer box border */
+  padding: 0px;
+}
+.container > div {
+	/* Controls entire container background; transparency allows see-through of box colours
+  background-color: rgba(255, 255, 255, 0.8);
+  /* controls space around text in box */
+  padding: 0px;
+}
+.container > div.header {
+  grid-area: header;
+  /*
+  text-align: center; 
+  */
+}
+.container > div.menu {
+  grid-area: menu;
+}
+.container > div.content {
+  grid-area: content;
+}
+.container > div.footer {
+  grid-area: footer;
+}
